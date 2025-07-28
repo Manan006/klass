@@ -17,12 +17,12 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+INITIAL_DIR = BASE_DIR.parent
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
 )
-environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
+environ.Env.read_env(os.path.join(INITIAL_DIR, ".env"))
 
 
 # Quick-start development settings - unsuitable for production
